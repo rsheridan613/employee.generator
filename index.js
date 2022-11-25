@@ -40,11 +40,9 @@ const internQuestions = [
   },
 ];
 
-const roleQuestion = [
-  {
-    name: "role",
-    type: "list",
-    message: "Which role would you like to add next?",
-    choices: ["Engineer", "Intern", "Finish"],
-  },
-];
+const roleQuestion = {
+  name: "role",
+  type: "list",
+  message: "Which role would you like to add next?",
+  choices: ["Engineer", "Intern", "Finish"],
+};
