@@ -1,8 +1,14 @@
 const createTeam = (team) => {
   const createManager = (manager) => {
     return `
-        <div>
-            <h1> ${manager.getName()} </h1>
+        <div class="col-md-6 col-lg-4 border border-dark rounded bg-success">
+          <div class="box">
+            <h3 class="name text-white">${this.getName()}</h3>
+            <h3 class="title text-white">${this.getRole()}</h3>
+            <h5 class="bg-white rounded my-1 p-2">${this.getID()}</h5>
+            <h5 class="bg-white rounded my-1 p-2">${this.getEmail()}</h5>
+            <h5 class="bg-white rounded my-1 p-2">${this.getOfficeNumber()}</h5>
+          </div>
         </div>
         `;
   };
@@ -18,7 +24,7 @@ const createTeam = (team) => {
 
 module.exports = (team) => {
   return `
-    <!DOCTYPE html>
+  <!DOCTYPE html>
   <html lang="en">
     <head>
       <meta charset="UTF-8" />
@@ -31,10 +37,18 @@ module.exports = (team) => {
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
         crossorigin="anonymous"
       />
+      <title>TITLE HERE</title>
     </head>
     <body>
-      <div class="page-header bg-success text-center p-4 text-white">
-        <h1>${team.teamName}</h1>
+      <div class="page-header bg-success text-center p-4 text-white mb-5">
+        <h1>TEAM NAME HERE</h1>
+      </div>
+      <div class="team-boxed">
+        <div class="container">
+          <div class="row">
+            ${createTeam}
+          </div>
+        </div>
       </div>
     </body>
   </html>

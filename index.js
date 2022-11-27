@@ -1,14 +1,15 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const path = require("path");
+
 const Employee = require("./primary/Employee");
 const Manager = require("./primary/Manager");
 const Engineer = require("./primary/Engineer");
 const Intern = require("./primary/Intern");
 const generateHTML = require("./utils/generateHTML");
-const path = require("path");
 
 const dir = path.resolve(__dirname, "src");
-const dpath = path.join(dir, "team.html");
+const dpath = path.join(dir, "custom.html");
 
 const createHtml = require("./src/page.js");
 
@@ -57,10 +58,16 @@ const internQuestions = [
 ];
 
 function init() {
-  // create a manager
+  // Create a Manager
   function createManager() {
     inquirer.prompt(managerQuestions).then((responses) => {
-      const manager = new Manager(responses.managerName);
+      const manager = new Manager(
+        responses.name,
+        responses.id,
+        responses.email,
+        responses.officeNum,
+        responses.teamName
+      );
       team.push(manager);
       createTeam();
     });
@@ -69,7 +76,12 @@ function init() {
   // Create an Engineer
   function createEngineer() {
     inquirer.prompt(engineerQuestions).then((responses) => {
-      const engineer = new Engineer(responses.engineerName);
+      const engineer = new Engineer(
+        responses.name,
+        responses.id,
+        responses.email,
+        responses.github
+      );
       team.push(engineer);
       createTeam();
     });
@@ -78,7 +90,12 @@ function init() {
   // Create an Intern
   function createIntern() {
     inquirer.prompt(internQuestions).then((responses) => {
-      const intern = new Intern(responses.internName);
+      const intern = new Intern(
+        responses.name,
+        responses.id,
+        responses.email,
+        responses.school
+      );
       team.push(intern);
       createTeam();
     });
@@ -95,8 +112,8 @@ function init() {
           choices: ["Engineer", "Intern", "Done"],
         },
       ])
-      .then((res) => {
-        switch (res.nextRole) {
+      .then((responce) => {
+        switch (responce.nextRole) {
           case "Engineer":
             createEngineer();
             break;
@@ -104,16 +121,15 @@ function init() {
             createIntern();
             break;
           default:
-            build();
+            buildHTML();
+        }
+        function buildHTML() {
+          console.log(team);
+          fs.writeFileSync(dpath, createHtml(team), "utf-8");
         }
       });
-
-    function build() {
-      fs.writeFileSync(dpath, createHtml(team), "utf-8");
-    }
-
-    createManager();
   }
+  createManager();
 }
 
 init();
