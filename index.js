@@ -6,7 +6,6 @@ const Employee = require("./primary/Employee");
 const Manager = require("./primary/Manager");
 const Engineer = require("./primary/Engineer");
 const Intern = require("./primary/Intern");
-const generateHTML = require("./utils/generateHTML");
 
 const dir = path.resolve(__dirname, "src");
 const dpath = path.join(dir, "custom.html");

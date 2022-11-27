@@ -17,7 +17,7 @@ const createTeam = (team) => {
             <h4 class="title text-white">${manager.getRole()}</h4>
             <h5 class="bg-white rounded my-1 p-2">ID: ${manager.getID()}</h5>
             <h5 class="bg-white rounded my-1 p-2">
-              <a href="mailto:${manager.getEmail()}">Email: ${manager.getEmail()}</a>
+              Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a>
             </h5>
             <h5 class="bg-white rounded my-1 p-2">Office: ${manager.getOfficeNumber()}</h5>
           </div>
@@ -34,10 +34,10 @@ const createTeam = (team) => {
         <h4 class="title text-white">${engineer.getRole()}</h4>
         <h5 class="bg-white rounded my-1 p-2">ID: ${engineer.getID()}</h5>
         <h5 class="bg-white rounded my-1 p-2">
-          <a href="mailto:${engineer.getEmail()}">Email: ${engineer.getEmail()}</a>
+          Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a>
         </h5>
         <h5 class="bg-white rounded my-1 p-2">
-          <a href="https://github.com/${engineer.getGithub()}">GitHub: ${engineer.getGithub()}</a>
+          GitHub: <a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a>
         </h5>
       </div>
     </div>
@@ -53,7 +53,7 @@ const createTeam = (team) => {
         <h4 class="title text-white">${intern.getRole()}</h4>
         <h5 class="bg-white rounded my-1 p-2">ID: ${intern.getID()}</h5>
         <h5 class="bg-white rounded my-1 p-2">
-          <a href="mailto:${intern.getEmail()}">Email: ${intern.getEmail()}</a>
+          Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a>
         </h5>
         <h5 class="bg-white rounded my-1 p-2">School: ${intern.getSchool()}</h5>
       </div>
