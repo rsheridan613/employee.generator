@@ -2,12 +2,12 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
 
-const Employee = require("./dist/Employee");
-const Manager = require("./dist/Manager");
-const Engineer = require("./dist/Engineer");
-const Intern = require("./dist/Intern");
+const Employee = require("./lib/Employee");
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
 
-const dir = path.resolve(__dirname, "src");
+const dir = path.resolve(__dirname, "dist");
 const dpath = path.join(dir, "custom.html");
 
 const createHtml = require("./src/page.js");
@@ -123,7 +123,6 @@ function init() {
             buildHTML();
         }
         function buildHTML() {
-          console.log(team);
           fs.writeFileSync(dpath, createHtml(team), "utf-8");
         }
       });

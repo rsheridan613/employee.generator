@@ -1,8 +1,23 @@
-const Employee = require("../dist/Employee");
+const Employee = require("../lib/Employee");
 
 describe("Employee", () => {
-  const employee = new Employee("Garfield", "13", "lasagna@garf.net");
-  describe("getName", () =>
-    it("Should return given name", () =>
-      expect(employee.getName()).isEqual("Garfield")));
+  describe("Creating new Employee", () => {
+    const employee = new Employee("Garfield", "76", "lasagna@garf.net");
+
+    it("Should return given name", () => {
+      expect(employee.getName()).toBe("Garfield");
+    });
+
+    it("Should return given ID", () => {
+      expect(employee.getID()).toBe("76");
+    });
+
+    it("Should return given email", () => {
+      expect(employee.getEmail()).toBe("lasagna@garf.net");
+    });
+
+    it("Should return 'Employee'", () => {
+      expect(employee.getRole()).toBe("Employee");
+    });
+  });
 });

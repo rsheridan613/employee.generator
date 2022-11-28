@@ -1,5 +1,14 @@
 {
-  "dependencies": {
+  "name": "employee.generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "devDependencies": {
+    "jest": "^24.9.0",
     "inquirer": "^8.2.4"
   }
 }
