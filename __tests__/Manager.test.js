@@ -1,7 +1,7 @@
 const Manager = require("../lib/Manager");
 
 describe("Manager", () => {
-  describe("Creating new Intern", () => {
+  describe("Creating new Manager", () => {
     const manager = new Manager("Gary", "79", "far@side.com", "814");
 
     it("Should return given name", () => {
