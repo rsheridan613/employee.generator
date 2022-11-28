@@ -37,7 +37,7 @@ const createTeam = (team) => {
           Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a>
         </h5>
         <h5 class="bg-white rounded my-1 p-2">
-          GitHub: <a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a>
+          GitHub: <a href="https://github.com/${engineer.getGithub()}" target="_blank">${engineer.getGithub()}</a>
         </h5>
       </div>
     </div>
