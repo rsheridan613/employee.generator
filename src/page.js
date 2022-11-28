@@ -10,7 +10,7 @@ const createTeam = (team) => {
       </div>
       <div class="team-boxed">
         <div class="container">
-          <div class="row">
+          <div class="row justify-content-center">
         <div class="col-6 col-lg-4 border border-dark rounded bg-success">
           <div class="box">
             <h3 class="name text-white">${manager.getName()}</h3>

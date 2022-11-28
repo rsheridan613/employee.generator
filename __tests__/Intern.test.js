@@ -6,7 +6,7 @@ describe("Intern", () => {
       "Charlie Brown",
       "50",
       "cbrown@snoopy.com",
-      "Peanut Univercity"
+      "Peanut University"
     );
 
     it("Should return given name", () => {
@@ -26,7 +26,7 @@ describe("Intern", () => {
     });
 
     it("Should return given School name", () => {
-      expect(intern.getSchool()).toBe("Peanut Univercity");
+      expect(intern.getSchool()).toBe("Peanut University");
     });
   });
 });
