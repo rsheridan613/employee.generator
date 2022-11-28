@@ -2,10 +2,10 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
 
-const Employee = require("./primary/Employee");
-const Manager = require("./primary/Manager");
-const Engineer = require("./primary/Engineer");
-const Intern = require("./primary/Intern");
+const Employee = require("./dist/Employee");
+const Manager = require("./dist/Manager");
+const Engineer = require("./dist/Engineer");
+const Intern = require("./dist/Intern");
 
 const dir = path.resolve(__dirname, "src");
 const dpath = path.join(dir, "custom.html");
